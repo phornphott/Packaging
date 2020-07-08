@@ -1,0 +1,25 @@
+﻿
+<div class="row" ng-init="LoadForm(data); CallData();">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card  ">
+            <div class="card-body">
+                <h4 class="text-primary mb-2">กลุ่มสินค้า</h4>
+                <hr />
+                <div id="showAdd">
+                    <div id="form-container"></div><br>
+                    <div class="col-lg-11 pull-right">
+                        <button type="button" class="btn btn-success" id="btnAddSTG" ng-click="InsertSTG()"><i class="fa fa-plus"></i> เพิ่มกลุ่มสินค้า</button>
+                        <button type="button" class="btn btn-success" id="btnEditSTG" ng-click="SubmitEditProductGroup()"><i class="fa fa-plus"></i> แก้ไขกลุ่มสินค้า</button>
+                        <button type="button" class="btn btn-danger" id="btnRefreshSTG" ng-click="Refresh()"><i class="fa fa-refresh"></i> ยกเลิก</button>
+
+                    </div>
+                    <br>
+                    <hr>
+                </div>
+                <button type="button" class="btn btn-primary" id="btnAdd" ng-click="Add()"><i class="fa fa-plus"></i> เพิ่มกลุ่มสินค้า</button>
+
+                    <div id="grid-container"></div>
+                </div>
+        </div>
+    </div>
+</div>

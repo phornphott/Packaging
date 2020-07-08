@@ -1,0 +1,29 @@
+﻿
+<div class="row" ng-init="CallData()">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card  ">
+            <div class="card-body">
+
+                <h4 class="text-primary mb-2">ลูกค้า</h4>
+
+                <hr>
+                <div class="col-lg-12">
+
+                    <button type="button" class="btn btn-primary" ng-click="Add()" id="btnAdd"><i class="fa fa-plus"></i> เพิ่มลูกค้า</button>
+                    <button type="button" class="btn btn-success" ng-click="CallAllData()" id="btnAll"><i class="fa fa-list"></i> ทั้งหมด</button>
+
+                    <br>
+                    <br>
+                    <div id="form-container"></div>
+                    <div id="grid-container"></div>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-success" ng-click="SubmitAdd()" id="btnSubmitAdd"><i class="fa fa-save"></i> เพิ่มลูกค้า</button>
+                        <button type="button" class="btn btn-success" ng-click="SubmitUpdate()" id="btnSubmitEdit"><i class="fa fa-save"></i> แก้ไขลูกค้า</button>
+                        <button type="button" class="btn btn-danger" ng-click="CallData()" id="btnCancel"><i class="fa fa-refresh"></i> ย้อนกลับ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

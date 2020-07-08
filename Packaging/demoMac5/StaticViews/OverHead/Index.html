@@ -1,0 +1,57 @@
+﻿
+
+<div class="row" ng-init="CallData()">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card  ">
+            <div class="card-body">
+                <h4 class="text-primary mb-2">ค่าโสหุ้ยส่วนหัว</h4>
+                <hr />
+                <button class="btn btn-primary" id="btnAdd" ng-click="Add()"><i class="fa fa-plus"></i> เพิ่มค่าโสหุ้ยส่วนหัว</button>
+                <div id="showAdd">
+                    <div id="form-container"></div><br>
+                    <div class="col-lg-11 pull-right">
+                        <button type="button" class="btn btn-success" id="btnAddDEG" ng-click="Insert()"><i class="fa fa-plus"></i> เพิ่มต้นทุนวัตถุดิบส่วนหัว</button>
+                        <button type="button" class="btn btn-success" id="btnEditDEG" ng-click="Update()"><i class="fa fa-plus"></i> แก้ไขต้นทุนวัตถุดิบส่วนหัว</button>
+                        <button type="button" class="btn btn-danger" id="btnRefreshDEG" ng-click="Refresh()"><i class="fa fa-refresh"></i> ยกเลิก</button>
+
+                    </div>
+                    <br>
+                    <hr>
+                </div>
+                <div id="loadIndicator"></div>
+                <br />
+                <div id="gridContainer"></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="OverheadID"></div>
+<!--  grid -->
+<br>
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card  ">
+            <div class="card-body">
+
+                <div id="showAdd1">
+                    <br /><br />
+                    <h4>ค่าโสหุ้ยส่วนรายการ</h4>
+
+                    <div id="gridContainer1"></div>
+                    <br /><br /><br /><br />
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,24 @@
+﻿
+<div class="row" ng-init="CallData()">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card  ">
+            <div class="card-body">
+                <h4 class="text-primary mb-2">งาน</h4>
+                <hr />
+
+                <button type="button" class="btn btn-primary" ng-click="AddJob()" id="btnAdd"><i class="fa fa-plus"></i> เพิ่มงาน</button>
+
+
+                <div id="form-container"></div>
+                <div id="grid-container"></div>
+                <br>
+                <div class="col-lg-11 pull-right">
+                    <button type="button" class="btn btn-success" ng-click="SubmitJob()" id="btnSubmitAdd"><i class="fa fa-save"></i> เพิ่มข้อมูลงาน</button>
+                    <button type="button" class="btn btn-success" ng-click="SubmitJobUpdate()" id="btnSubmitEdit"><i class="fa fa-save"></i> แก้ไขข้อมูลงาน</button>
+                    <button type="button" class="btn btn-danger" ng-click="CallData()" id="btnCancel"><i class="fa fa-refresh"></i> ย้อนกลับ</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

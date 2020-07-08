@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html ng-app="AceApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Packaging</title>
+
+    <link href="~/Source/dx.common.css" rel="stylesheet" />
+
+    <link href="~/Source/dx.light.compact.css" rel="stylesheet" />
+
+    <link href="~/Source/generic.light.custom.css" rel="stylesheet" />
+    <link href="~/Scripts/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/Scripts/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .left {
+            float: left;
+            width: 250px;
+            height: 1000px;
+            padding: 20px;
+            background: rgba(191, 191, 191, 0.15);
+            margin-right: 20px;
+        }
+
+        .right {
+            overflow: hidden;
+        }
+
+        .left .list .dx-list-group-header {
+            color: #f05b41;
+            font-weight: normal;
+            font-size: 18px;
+        }
+
+        .left .list .hotel {
+            float: left;
+        }
+
+            .left .list .hotel .name {
+                font-weight: bold;
+            }
+
+        .right .header {
+            height: 70px;
+        }
+
+            .right .header .name-container {
+                float: left;
+            }
+
+            .right .header .name {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .right .header .price-container {
+                padding-top: 27px;
+            }
+
+        .right .name-container .type {
+            margin-top: 0;
+        }
+
+        .right .tile {
+            margin: 0 -12px 0 -12px;
+        }
+
+        .right .tile-image {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+        }
+
+        .right .address {
+            padding-top: 30px;
+            font-size: 18px;
+            opacity: 0.7;
+        }
+
+        .right .description {
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand">The Packaging</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:#fff;">@Session["iusername"]<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="\Home/Logout">ออกจากระบบ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="left">
+        <div id="treeview"></div>
+    </div>
+
+    <input type="hidden" id="TempId" name="TempId" />
+    <div class="right">
+        <div id="LoadingMenu">
+        </div>
+        <div class="content" style="margin-right: 10px;">
+            <ui-view autoscroll="false"></ui-view>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Scripts/angular/angular.min.js"></script>
+    <script src="~/Scripts/angular/angular-animate.min.js"></script>
+    <script src="~/Scripts/angular/angular-touch.min.js"></script>
+    <script src="~/Scripts/angular/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/angular/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/component/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="~/Scripts/vendor/raphael/raphael.min.js"></script>
+    <script src="~/Scripts/dist/js/sb-admin-2.js"></script>
+    <script src="~/Source/dx.all.js"></script>
+    <script src="~/Source/jszip.min.js"></script>
+    @*<script src="~/Scripts/app/app.js"></script>*@
+    <script src="~/Scripts/menu.js"></script>
+
+    <script src="~/Scripts/src/App/app.js"></script>
+    <script src="~/Scripts/src/router/AllRouter.js"></script>
+</body>
+</html>

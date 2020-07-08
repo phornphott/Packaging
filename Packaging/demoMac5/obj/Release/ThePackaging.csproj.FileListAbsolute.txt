@@ -1,0 +1,171 @@
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\ApplicationInsights.config
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x64\msvcr120.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x86\msvcr120.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csc.exe
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csc.exe.config
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csc.rsp
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csi.exe
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csi.rsp
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.AppContext.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.Collections.Immutable.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.IO.FileSystem.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.Reflection.Metadata.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\vbc.exe
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\vbc.exe.config
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\vbc.rsp
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\VBCSCompiler.exe
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\VBCSCompiler.exe.config
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\demoMac5.dll.config
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\demoMac5.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\demoMac5.pdb
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Antlr3.Runtime.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Dapper.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.Agent.Intercept.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.DependencyCollector.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.Web.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.WindowsServer.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ApplicationInsights.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ReportViewer.Common.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ReportViewer.WebForms.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.SqlServer.Types.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.Web.Infrastructure.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Newtonsoft.Json.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Net.Http.Formatting.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Helpers.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.WebHost.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Mvc.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Optimization.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Razor.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Deployment.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Razor.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\WebGrease.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Dapper.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ReportViewer.WebForms.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Newtonsoft.Json.pdb
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Newtonsoft.Json.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Helpers.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Mvc.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Optimization.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Razor.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Deployment.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Razor.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Antlr3.Runtime.pdb
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Net.Http.Formatting.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.WebHost.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ApplicationInsights.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.DependencyCollector.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.WindowsServer.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.Web.xml
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\ThePackaging.csproj.CoreCompileInputs.cache
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\ThePackaging.csproj.CopyComplete
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\demoMac5.dll
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\demoMac5.pdb
+C:\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\ThePackaging.csprojAssemblyReference.cache
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\ApplicationInsights.config
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x64\msvcr120.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x86\msvcr120.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csc.exe
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csc.exe.config
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csc.rsp
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csi.exe
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\csi.rsp
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.AppContext.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.Collections.Immutable.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.IO.FileSystem.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\System.Reflection.Metadata.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\vbc.exe
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\vbc.exe.config
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\vbc.rsp
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\VBCSCompiler.exe
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\roslyn\VBCSCompiler.exe.config
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\demoMac5.dll.config
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\demoMac5.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\demoMac5.pdb
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Antlr3.Runtime.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Dapper.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.DependencyCollector.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.Web.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.WindowsServer.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ApplicationInsights.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ReportViewer.Common.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ReportViewer.WebForms.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.SqlServer.Types.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.Web.Infrastructure.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Newtonsoft.Json.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Net.Http.Formatting.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Helpers.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.WebHost.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Mvc.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Optimization.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Razor.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Deployment.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Razor.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\WebGrease.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Dapper.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ReportViewer.WebForms.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Newtonsoft.Json.pdb
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Newtonsoft.Json.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Helpers.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Mvc.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Optimization.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Razor.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Deployment.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.WebPages.Razor.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Antlr3.Runtime.pdb
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Net.Http.Formatting.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\System.Web.Http.WebHost.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.ApplicationInsights.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.DependencyCollector.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.WindowsServer.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\bin\Microsoft.AI.Web.xml
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\ThePackaging.csprojResolveAssemblyReference.cache
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\ThePackaging.csproj.CoreCompileInputs.cache
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\demoMac5.dll
+F:\Job\From C\JOB\พี่ยุ้ย\Packaging\demoMac5\obj\Release\demoMac5.pdb

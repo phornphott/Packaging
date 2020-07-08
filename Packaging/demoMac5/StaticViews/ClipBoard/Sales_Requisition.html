@@ -1,0 +1,27 @@
+﻿
+
+<div class="row" ng-init="loadSaleRequisition()">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card  ">
+            <div class="card-body">
+                <div class="pull-right">
+                    <button class="btn btn-success" ng-click="loadClipBoard()"><i class="fa fa-download"></i> โหลดกระดาษทด </button>
+                </div>
+                <h4 class="text-primary mb-2">ใบขออนุมัติการขาย</h4>
+                <hr />
+                <div id="loadIndicator"></div>
+                <br />
+                <div id="saleRequisitionGrid"></div>
+
+                <div id="popup">
+                    <div id="clipBoardGrid"></div>
+                    <br><br>
+                    <div class="pull-right">
+                        <button class="btn btn-success" ng-click="getClipBoard()" ng-disabled="selectedKeys.length == 0"><i class="fa fa-download"></i> โหลดกระดาษทด </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

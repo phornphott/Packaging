@@ -1,0 +1,228 @@
+﻿
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="pull-right">
+                    <button class="btn btn-success" onclick="printData()"><i class="fa fa-print"></i> Print</button>
+                    <button class="btn btn-danger" onclick="parent.location='#/ClipBoard/Job_Order'"><i class="fa fa-refresh"></i> กลับไปก่อนหน้านี้ </button>
+                </div>
+                <h4 class="text-primary mb-2">ปริ้นใบแจ้งการผลิต</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12" id="printThis">
+                        <table style="width: 100%;font-size: 13px;">
+                            <tr>
+                                <th colspan="2" style="text-align:center;">ใบยืนยันการสั่งซื้อผลิตภัณฑ์พลาสติก</th>
+                            </tr>
+                            <tr>
+                                <td>พนักงานขาย : </td>
+                                <td>รหัสงาน : </td>
+                            </tr>
+                            <tr>
+                                <td>วันที่ : </td>
+                                <td>ชื่องาน : </td>
+                            </tr>
+                            <tr>
+                                <td>เลขที่ : </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ลูกค้า : </td>
+                                <td>ใบขออนุมัติเลขที่ : </td>
+                            </tr>
+                            <tr>
+                                <td>สถานที่จัดส่ง : </td>
+                                <td>กระดาษทดเลขที่ : </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Logo : </td>
+                            </tr>
+                        </table>
+                        <table style="width: 100%;font-size: 13px;margin-top:10px;">
+                            <tr>
+                                <th style="text-align: left;">รายละเอียดสินค้าและต้นทุน</th>
+                            </tr>
+                        </table>
+                        <table style="width: 100%;border: 1px solid;font-size: 13px;">
+                            <tr>
+                                <td width="33%">ขนาดกระสอบ : <span style="padding-left: 110px;">ใบ</span></td>
+                                <td width="33%">โครงสร้างผ้า : </td>
+                                <td width="33%">จำนวนกระสอบ : </td>
+                            </tr>
+                            <tr>
+                                <td>นน. กระสอบ : <span style="padding-left: 92px;">กรัม/ใบ</span></td>
+                                <td>ราคาเม็ด PP : </td>
+                                <td>ต้นทุนเม็ด PP : </td>
+                            </tr>
+                            <tr>
+                                <td>นน. ถุงใน : <span style="padding-left: 108px;">กรัม/ใบ</span></td>
+                                <td>ราคาเม็ด PE : </td>
+                                <td>ต้นทุนเม็ด PE : </td>
+                            </tr>
+                            <tr>
+                                <td>นน. เคลือบ : <span style="padding-left: 15px;">นน. การ์เวียร์</span><span style="padding-left: 19px;">กรัม/ใบ</span></td>
+                                <td>ราคาเม็ดเคลือบ : </td>
+                                <td>ต้นทุนเม็ดเคลือบ : </td>
+                            </tr>
+                            <tr>
+                                <td>เม็ดสี : </td>
+                                <td>ราคาเพิ่มเม็ดสี : </td>
+                                <td>ต้นทุนเม็ดสี : </td>
+                            </tr>
+                            <tr>
+                                <td>งานพิมพ์ Flexo : </td>
+                                <td>หน้า/สี : </td>
+                                <td>ต้นทุนงานพิมพ์ : </td>
+                            </tr>
+                            <tr>
+                                <td>งานพิมพ์การ์เวียร์ : <span style="padding-left: 88px;">ตรม.</span></td>
+                                <td>ราคา ตรม. ละ : </td>
+                                <td>ต้นทุนฟีล์ม OPP : </td>
+                            </tr>
+                            <tr>
+                                <td>หูหิ้ว : </td>
+                                <td>ราคาคู่ละ : </td>
+                                <td>ต้นทุนหูหิ้ว : </td>
+                            </tr>
+                            <tr>
+                                <td>TAG : </td>
+                                <td>ราคาคู่ละ : </td>
+                                <td>ต้นทุน TAG : </td>
+                            </tr>
+                            <tr>
+                                <td>งานเย็บ : </td>
+                                <td>ค่าเย็บ : </td>
+                                <td>ค่าจ้างเย็บ : </td>
+                            </tr>
+                            <tr>
+                                <td>เจาะตาไก่ : </td>
+                                <td>จำนวน (รู) : </td>
+                                <td>ค่าเจาะตาไก่ : </td>
+                            </tr>
+                            <tr>
+                                <td>อัดเบลล์ : </td>
+                                <td>ราคาใบละ : </td>
+                                <td>ต้นทุนอัลเบลล์ : </td>
+                            </tr>
+                            <tr>
+                                <td>สวมถุงใน : </td>
+                                <td>ราคาสวมใบละ : </td>
+                                <td>ค่าสวมถุงใน : </td>
+                            </tr>
+                            <tr>
+                                <td>ค่า Conversion : </td>
+                                <td>งานถุงไม่เคลือบ : </td>
+                                <td>Conversion : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>งานถุงเคลือบ : </td>
+                                <td>Conversion เคลือบ : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>ค่าใช้จ่ายขาย/บริหาร : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>ต้นทุนอื่นๆ : </td>
+                            </tr>
+                            <tr>
+                                <td>ระยะทาง : </td>
+                                <td></td>
+                                <td>ค่าขนส่ง : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>ค่านายหน้า : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>รวมต้นทุนสินค้า : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>ราคาขายขั้นต่ำ : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>ราคาขายลูกค้า</td>
+                            </tr>
+                            <tr>
+                                <td>รูปแบบราคาขาย : </td>
+                                <td></td>
+                                <td>VAT 7% : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>ราคาขายรวม VAT : </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>กำไรต่อใบ : </td>
+                            </tr>
+                        </table>
+                        <table style="width: 100%;font-size: 13px;margin-top:10px;">
+                            <tr>
+                                <th style="text-align: left;">ข้อมูลผลิตภัณฑ์เพิ่มเติม</th>
+                            </tr>
+                        </table>
+                        <table style="width: 100%;border: 1px solid;font-size: 13px;">
+                            <tr>
+                                <td>การบรรจุหีบห่อ : </td>
+                            </tr>
+                            <tr>
+                                <td>สถานที่ส่งมอบ : </td>
+                            </tr>
+                            <tr>
+                                <td>วันที่ส่งมอบ : </td>
+                            </tr>
+                            <tr>
+                                <td>หมายเหตุ : </td>
+                            </tr>
+                        </table>
+                        <table style="width: 100%;margin-top: 50px;font-size: 13px;">
+                            <tr>
+                                <td style="text-align:center;">_________________________</td>
+                                <td style="text-align:center;">_________________________</td>
+                                <td style="text-align:center;">_________________________</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">ชื่อพนักงานขาย</td>
+                                <td style="text-align:center;">ผู้จัดการฝ่ายขาย และการตลาด</td>
+                                <td style="text-align:center;">กรรมการผู้จัดการ</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tab {
+        display: inline-block;
+        margin-left: 40px;
+        text-decoration-line: underline;
+    }
+</style>
+
+<script>
+    function printData() {
+        var divToPrint = document.getElementById("printThis");
+        newWin = window.open("");
+        newWin.document.write(divToPrint.outerHTML);
+        newWin.print();
+        newWin.close();
+    }
+</script>
