@@ -36,6 +36,8 @@ namespace demoMac5.Models
         public decimal Bag_Weight { get; set; }
         public int Bagin_Use { get; set; }
         public bool Bagin_Use_Text { get; set; }
+        public decimal Bagin_Width { get; set; }
+        public decimal Bagin_Lenght { get; set; }
         public decimal Bagin_Micron { get; set; }
         public decimal Bagin_Weight { get; set; }
         public int Plastic_Use { get; set; }

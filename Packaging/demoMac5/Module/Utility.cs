@@ -106,7 +106,15 @@ namespace demoMac5.Module
         {
             String strDate;
             CultureInfo invC = System.Globalization.CultureInfo.InvariantCulture;
-            strDate = "{ d '" + date.ToString("yyyy-MM-dd", invC) + "' }";
+            //if ((date == DateTime.MinValue) || (date == DateTime.MaxValue))
+            //{
+            //    strDate = "{d '1900-01-01'}";
+            //}
+            //else
+            //{
+                strDate = "{ d '" + date.ToString("yyyy-MM-dd", invC) + "' }";
+            //}
+            
             return strDate;
         }
 
@@ -242,6 +250,15 @@ namespace demoMac5.Module
             dt = obj == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(obj);
 
             return dt;
+        }
+
+        public static string DBString(object obj)
+        {
+            string str;
+
+            str = obj == DBNull.Value ? "" : Convert.ToString(obj);
+
+            return str;
         }
     }
 }

@@ -194,8 +194,8 @@
                         },
                         editorOptions: {
                             disabled: false,
-                            attr: { 'style': "text-transform: uppercase" },
-                            Maxleght: 15,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 15,
                         },
                         validationRules: [{
                             type: "required",

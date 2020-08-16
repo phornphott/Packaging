@@ -61,9 +61,19 @@
                 showBorders: true,
                 showRowLines: true,
                 rowAlternationEnabled: true,
+                allowColumnResizing: true,
+                columnAutoWidth: true,
                 height: 600,
                 paging: {
                     enabled: false
+                },
+                paging: {
+                    pageSize: 20
+                },
+                pager: {
+                    //showPageSizeSelector: true,
+                    //allowedPageSizes: [5, 10, 20],
+                    showInfo: true
                 },
 
                 searchPanel: {
@@ -83,6 +93,7 @@
                         alignment: 'center',
                         allowFiltering: false,
                         fixed: false,
+                        visible: false,
                         fixedPosition: 'left',
                         cellTemplate: function (container, options) {
                             rownum = rownum + 1;
@@ -90,6 +101,15 @@
                                 .append(rownum)
                                 .appendTo(container);
                         }
+                    },
+                    {
+                        dataField: "JOBrow",
+                        caption: "ลำดับ",
+                        width: 100,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        fixed: false,
+                        fixedPosition: 'left',                        
                     },
                     {
                         dataField: "JOBcode",
@@ -115,7 +135,7 @@
                     {
                         dataField: "JOBhide",
                         caption: "ซ่อนรหัสนี้",
-
+                        alignment: "center",
                         cellTemplate: function (container, options) {
                             if (options.data.JOBhide == -1) {
                                 $("<div>")
@@ -134,7 +154,7 @@
                     {
                         dataField: "JOBlock",
                         caption: "ล็อกรหัสนี้",
-
+                        alignment: "center",
                         cellTemplate: function (container, options) {
                             if (options.data.JOBlock == -1) {
                                 $("<div>")
@@ -151,12 +171,12 @@
                         }
 
                     },
-                    {
-                        dataField: "JOBrefWE",
-                        caption: "อ้างอิง-บันทึกช่วยจำ",
+                    //{
+                    //    dataField: "JOBrefWE",
+                    //    caption: "อ้างอิง-บันทึกช่วยจำ",
 
 
-                    },
+                    //},
                     //{
                     //    dataField: "JOBsortNT",
                     //    caption: "จัดเรียงชื่อไทย",
@@ -277,8 +297,8 @@
                     },
                     editorOptions: {
                         disabled: false,
-                        attr: { 'style': "text-transform: uppercase" },
-                        Maxleght: 15,
+                        inputAttr: { 'style': "text-transform: uppercase" },
+                        maxLength: 15,
                     },
                     validationRules: [{
                         type: "required",
@@ -323,8 +343,8 @@
                     }
                 },
                 {
-                    dataField: "JOBhide_Chk",
-
+                    dataField: "JOBhide",
+                    editorType: "dxCheckBox",
                     label: {
                         text: "ซ่อนรหัสนี้",
                     },
@@ -333,8 +353,8 @@
                     }
                 },
                 {
-                    dataField: "JOBlock_Chk",
-
+                    dataField: "JOBlock",
+                    editorType: "dxCheckBox",
                     label: {
                         text: "ล๊อกรหัสนี้",
                     },
@@ -378,8 +398,8 @@
                     },
                     editorOptions: {
                         disabled: false,
-                        attr: { 'style': "text-transform: uppercase" },
-                        Maxleght: 15,
+                        inputAttr: { 'style': "text-transform: uppercase" },
+                        maxLength: 15,
                     },
                     validationRules: [{
                         type: "required",
@@ -392,7 +412,9 @@
                         text: "กลุ่มงาน"
                     },
                     editorOptions: {
-                        disabled: false
+                        disabled: false,
+                        inputAttr: { 'style': "text-transform: uppercase" },
+                        maxLength: 10,
                     },
                     validationRules: [{
                         type: "required",
@@ -424,7 +446,7 @@
                     }
                 },
                 {
-                    dataField: "JOBhide_Chk",
+                    dataField: "JOBhide",
                     editorType: "dxCheckBox",
                     label: {
                         text: "ซ่อนรหัสนี้",
@@ -435,7 +457,7 @@
                     },
                 },
                 {
-                    dataField: "JOBlock_Chk",
+                    dataField: "JOBlock",
                     editorType: "dxCheckBox",
                     label: {
                         text: "ล๊อกรหัสนี้",
@@ -478,9 +500,12 @@
 
             if ($("#form-container").dxForm("instance").validate().isValid) {
                 var obj = $("#form-container").dxForm("instance").option('formData');
-                obj.JOBautostk_Chk = obj.JOBautostk_Chk == true ? true : false;
-                obj.JOBhide_Chk = obj.JOBhide_Chk == true ? true : false;
-                obj.JOBlock_Chk = obj.JOBlock_Chk == true ? true : false;
+                //obj.JOBautostk_Chk = false;
+                if ((obj.JOBautostk_Chk == -1) || (obj.JOBautostk_Chk == true)) obj.JOBautostk_Chk = true;
+                obj.JOBhide_Chk = false;
+                if ((obj.JOBhide == -1) || (obj.JOBhide == true)) obj.JOBhide_Chk = true;
+                obj.JOBlock_Chk = false;
+                if ((obj.JOBlock == -1) || (obj.JOBlock == true)) obj.JOBlock_Chk = true;
                 $.post("../BasicCode/InsertJOB",obj
                     //{
                     //    JOBcode: obj.JOBcode,
@@ -519,6 +544,10 @@
 
             if ($("#form-container").dxForm("instance").validate().isValid) {
                 var obj = $("#form-container").dxForm("instance").option('formData');
+                obj.JOBhide_Chk = false;
+                if ((obj.JOBhide == -1) || (obj.JOBhide == true)) obj.JOBhide_Chk = true;
+                obj.JOBlock_Chk = false;
+                if ((obj.JOBlock == -1) || (obj.JOBlock == true)) obj.JOBlock_Chk = true;
                 $.post("../BasicCode/UpdateJOB",
                     {
                         JOBid: obj.JOBid,

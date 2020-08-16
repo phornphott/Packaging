@@ -10,7 +10,7 @@
 
 
                 <div id="form-container"></div>
-                <div id="grid-container"></div>
+                <div id="grid-container" dx-data-grid="dataGridOptions"></div>
                 <br>
                 <div class="col-lg-11 pull-right">
                     <button type="button" class="btn btn-success" ng-click="SubmitAdd()" id="btnSubmitAdd"><i class="fa fa-save"></i> เพิ่มข้อมูลพนักงาน</button>
@@ -22,3 +22,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    #grid-container {
+        height: 100%;
+    }
+</style>

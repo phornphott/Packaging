@@ -343,6 +343,7 @@ namespace demoMac5.Module
 
                     strSQL += " and PERid=" + PERid;
                 }
+                strSQL += " order by PERcode";
                 ls = objConn.Query<PER>(strSQL).ToList();
                 //DataTable dt = DBHelper.List(strSQL, objConn);
 
@@ -411,64 +412,68 @@ namespace demoMac5.Module
             }
 
             SqlConnection objConn = DBHelper.ConnectDb(ref msgErr);
+            SqlCommand cmd = objConn.CreateCommand();
+
             try
             {
-                string strSQL = @"insert into PER (
-                                PERcode
-                                ,PERdep
-                                ,PERtaxnos
-                                ,PERnameT
-                                ,PERnameE
-                                ,PERbdate
-                                ,PERworkS
-                                ,PERworkF
-                                ,PERadd1
-                                ,PERadd2
-                                ,PERadd3
-                                ,PERtel
-                                ,PERpositn
-                                ,PERstatus
-                                ,PERnchild
-                                ,PERcisstudy
-                                ,PERnotstudy
-                                ,PERsalary
-                                ,PERhide
-                                ,PERlock
-                                ,PERmemo
-                                ,PEReditLK
-                                ,PERrefWE
-                                ,PEReditDT ) 
-                                values({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},
-                                {10},{11},{12},{13},{14},{15},{16},{17},{18},{19},
-                                {20},{21},{22},{23})";
-                strSQL = string.Format(strSQL
-                                , Utility.ReplaceString(stg.PERcode.ToUpper() ?? "")
-                                , Utility.ReplaceString(stg.PERdep ?? "")
-                                , Utility.ReplaceString(stg.PERtaxnos ?? "")
-                                , Utility.ReplaceString(stg.PERnameT ?? "")
-                                , Utility.ReplaceString(stg.PERnameE ?? "")
-                                , Utility.FormateDate(stg.PERbdate)
-                                , Utility.FormateDate(stg.PERworkS)
-                                , Utility.FormateDate(stg.PERworkF)
-                                , Utility.ReplaceString(stg.PERadd1 ?? "")
-                                , Utility.ReplaceString(stg.PERadd2 ?? "")
-                                , Utility.ReplaceString(stg.PERadd3 ?? "")
-                                , Utility.ReplaceString(stg.PERtel ?? "")
-                                , Utility.ReplaceString(stg.PERpositn ?? "")
-                                , stg.PERstatus
-                                , stg.PERnchild
-                                , stg.PERcisstudy
-                                , stg.PERnotstudy
-                                , stg.PERsalary
-                                , stg.PERhide
-                                , stg.PERlock
-                                , Utility.ReplaceString(stg.PERmemo)
-                                , Utility.FormateDateTime(stg.PEReditLK)
-                                , Utility.ReplaceString(stg.PERrefWE ?? "")
-                                , Utility.FormateDateTime(DateTime.Now)
-                    );
+                string strSQL = "insert into PER WITH (UPDLOCK) (PERcode,PERdep,PERtaxnos,PERnameT,PERnameE,PERbdate,PERworkS,PERworkF"
+                                + ",PERadd1,PERadd2,PERadd3,PERtel,PERpositn,PERstatus,PERnchild,PERcisstudy,PERnotstudy,PERsalary"
+                                + ",PERhide,PERlock,PERmemo,PEReditLK,PERrefWE,PEReditDT)"
+                                + " values (@PERcode,@PERdep,@PERtaxnos,@PERnameT,@PERnameE,@PERbdate,@PERworkS,@PERworkF"
+                                + ",@PERadd1,@PERadd2,@PERadd3,@PERtel,@PERpositn,@PERstatus,@PERnchild,@PERcisstudy,@PERnotstudy,@PERsalary"
+                                + ",@PERhide,@PERlock,@PERmemo,@PEReditLK,@PERrefWE,@PEReditDT)";
 
-                DBHelper.Execute(strSQL, objConn);
+
+
+                cmd = new SqlCommand(strSQL, objConn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.Add("@PERcode", SqlDbType.NVarChar, 15).Value = Utility.DBString(stg.PERcode.ToUpper());
+                cmd.Parameters.Add("@PERdep", SqlDbType.NVarChar, 15).Value = Utility.DBString(stg.PERdep);
+                cmd.Parameters.Add("@PERtaxnos", SqlDbType.NVarChar, 15).Value = Utility.DBString(stg.PERtaxnos);
+                cmd.Parameters.Add("@PERnameT", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERnameT);
+                cmd.Parameters.Add("@PERnameE", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERnameE);
+                if ((stg.PERbdate == DateTime.MinValue) || (stg.PERbdate == DateTime.MaxValue))
+                {
+                    cmd.Parameters.Add("@PERbdate", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@PERbdate", SqlDbType.DateTime).Value = Utility.DBDateTime(stg.PERbdate);
+                }
+                if ((stg.PERworkS == DateTime.MinValue) || (stg.PERworkS == DateTime.MaxValue))
+                {
+                    cmd.Parameters.Add("@PERworkS", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@PERworkS", SqlDbType.DateTime).Value = Utility.DBDateTime(stg.PERworkS);
+                }
+                if ((stg.PERworkF == DateTime.MinValue) || (stg.PERworkF == DateTime.MaxValue))
+                {
+                    cmd.Parameters.Add("@PERworkF", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@PERworkF", SqlDbType.DateTime).Value = Utility.DBDateTime(stg.PERworkF);
+                }
+                cmd.Parameters.Add("@PERadd1", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERadd1);
+                cmd.Parameters.Add("@PERadd2", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERadd2);
+                cmd.Parameters.Add("@PERadd3", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERadd3);
+                cmd.Parameters.Add("@PERtel", SqlDbType.NVarChar, 50).Value = Utility.DBString(stg.PERtel);
+                cmd.Parameters.Add("@PERpositn", SqlDbType.NVarChar, 50).Value = Utility.DBString(stg.PERpositn);
+                cmd.Parameters.Add("@PERstatus", SqlDbType.SmallInt).Value = stg.PERstatus;
+                cmd.Parameters.Add("@PERnchild", SqlDbType.SmallInt).Value = stg.PERnchild;
+                cmd.Parameters.Add("@PERcisstudy", SqlDbType.SmallInt).Value = stg.PERcisstudy;
+                cmd.Parameters.Add("@PERnotstudy", SqlDbType.SmallInt).Value = stg.PERnotstudy;
+                cmd.Parameters.Add("@PERsalary", SqlDbType.Money).Value = stg.PERsalary;
+                cmd.Parameters.Add("@PERhide", SqlDbType.SmallInt).Value = stg.PERhide;
+                cmd.Parameters.Add("@PERlock", SqlDbType.SmallInt).Value = stg.PERlock;
+                cmd.Parameters.Add("@PERmemo", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERmemo);
+                cmd.Parameters.Add("@PEReditLK", SqlDbType.DateTime).Value = DBNull.Value;
+                cmd.Parameters.Add("@PERrefWE", SqlDbType.NVarChar, 512).Value = Utility.DBString(stg.PERrefWE);
+                cmd.Parameters.Add("@PEReditDT", SqlDbType.DateTime).Value = DateTime.Now;
+                cmd.ExecuteNonQuery();
+                //DBHelper.Execute(strSQL, objConn);
 
             }
             catch (Exception ex)
@@ -497,63 +502,67 @@ namespace demoMac5.Module
                 stg.PERworkF = DateTime.MinValue;
             }
             SqlConnection objConn = DBHelper.ConnectDb(ref msgErr);
+            SqlCommand cmd = objConn.CreateCommand();
+
             try
             {
-                string strSQL = @"update PER Set
-                                   PERcode={1}
-                                ,PERdep={2}
-                                ,PERtaxnos={3}
-                                ,PERnameT={4}
-                                ,PERnameE={5}
-                                ,PERbdate={6}
-                                ,PERworkS={7}
-                                ,PERworkF={8}
-                                ,PERadd1={9}
-                                ,PERadd2={10}
-                                ,PERadd3={11}
-                                ,PERtel={12}
-                                ,PERpositn={13}
-                                ,PERstatus={14}
-                                ,PERnchild={15}
-                                ,PERcisstudy={16}
-                                ,PERnotstudy={17}
-                                ,PERsalary={18}
-                                ,PERhide={19}
-                                ,PERlock={20}
-                                ,PERmemo={21}
-                                ,PEReditLK={22}
-                                ,PERrefWE={23}
-                                ,PEReditDT={24}
-                                where PERid={0}";
+                string strSQL = "update PER WITH (UPDLOCK) Set PERcode =@PERcode , PERdep=@PERdep, PERtaxnos=@PERtaxnos, PERnameT=@PERnameT, PERnameE=@PERnameE"
+                                + ", PERbdate=@PERbdate, PERworkS=@PERworkS, PERworkF=@PERworkF, PERadd1=@PERadd1, PERadd2=@PERadd2, PERadd3=@PERadd3, PERtel=@PERtel"
+                                + ", PERpositn=@PERpositn, PERstatus=@PERstatus, PERnchild=@PERnchild, PERcisstudy=@PERcisstudy, PERnotstudy=@PERnotstudy, PERsalary=@PERsalary"
+                                + ", PERhide=@PERhide, PERlock=@PERlock, PERmemo=@PERmemo, PEReditLK=@PEReditLK, PERrefWE=@PERrefWE, PEReditDT=@PEReditDT"
+                                + " where PERid=@PERid";
 
-                strSQL = string.Format(strSQL
-                                , stg.PERid
-                                , Utility.ReplaceString(stg.PERcode.ToUpper() ?? "")
-                                , Utility.ReplaceString(stg.PERdep ?? "")
-                                , Utility.ReplaceString(stg.PERtaxnos ?? "")
-                                , Utility.ReplaceString(stg.PERnameT ?? "")
-                                , Utility.ReplaceString(stg.PERnameE ?? "")
-                                , Utility.FormateDateTime(stg.PERbdate)
-                                , Utility.FormateDateTime(stg.PERworkS)
-                                , Utility.FormateDateTime(stg.PERworkF)
-                                , Utility.ReplaceString(stg.PERadd1 ?? "")
-                                , Utility.ReplaceString(stg.PERadd2 ?? "")
-                                , Utility.ReplaceString(stg.PERadd3 ?? "")
-                                , Utility.ReplaceString(stg.PERtel ?? "")
-                                , Utility.ReplaceString(stg.PERpositn ?? "")
-                                , stg.PERstatus
-                                , stg.PERnchild
-                                , stg.PERcisstudy
-                                , stg.PERnotstudy
-                                , stg.PERsalary
-                                , stg.PERhide
-                                , stg.PERlock
-                                , Utility.ReplaceString(stg.PERmemo)
-                                , Utility.FormateDateTime(DateTime.Now)
-                                , Utility.ReplaceString(stg.PERrefWE ?? "")
-                                , Utility.FormateDateTime(DateTime.Now));
+                cmd = new SqlCommand(strSQL, objConn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.Add("@PERid", SqlDbType.Int).Value = stg.PERid;
+                cmd.Parameters.Add("@PERcode", SqlDbType.NVarChar, 15).Value = Utility.DBString(stg.PERcode.ToUpper());
+                cmd.Parameters.Add("@PERdep", SqlDbType.NVarChar, 15).Value = Utility.DBString(stg.PERdep);
+                cmd.Parameters.Add("@PERtaxnos", SqlDbType.NVarChar, 15).Value = Utility.DBString(stg.PERtaxnos);
+                cmd.Parameters.Add("@PERnameT", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERnameT);
+                cmd.Parameters.Add("@PERnameE", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERnameE);
+                if ((stg.PERbdate == DateTime.MinValue) || (stg.PERbdate == DateTime.MaxValue))
+                {
+                    cmd.Parameters.Add("@PERbdate", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@PERbdate", SqlDbType.DateTime).Value = Utility.DBDateTime(stg.PERbdate);
+                }
+                if ((stg.PERworkS == DateTime.MinValue) || (stg.PERworkS == DateTime.MaxValue))
+                {
+                    cmd.Parameters.Add("@PERworkS", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@PERworkS", SqlDbType.DateTime).Value = Utility.DBDateTime(stg.PERworkS);
+                }
+                if ((stg.PERworkF == DateTime.MinValue) || (stg.PERworkF == DateTime.MaxValue))
+                {
+                    cmd.Parameters.Add("@PERworkF", SqlDbType.DateTime).Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@PERworkF", SqlDbType.DateTime).Value = Utility.DBDateTime(stg.PERworkF);
+                }
+                cmd.Parameters.Add("@PERadd1", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERadd1);
+                cmd.Parameters.Add("@PERadd2", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERadd2);
+                cmd.Parameters.Add("@PERadd3", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERadd3);
+                cmd.Parameters.Add("@PERtel", SqlDbType.NVarChar, 50).Value = Utility.DBString(stg.PERtel);
+                cmd.Parameters.Add("@PERpositn", SqlDbType.NVarChar, 50).Value = Utility.DBString(stg.PERpositn);
+                cmd.Parameters.Add("@PERstatus", SqlDbType.SmallInt).Value = stg.PERstatus;
+                cmd.Parameters.Add("@PERnchild", SqlDbType.SmallInt).Value = stg.PERnchild;
+                cmd.Parameters.Add("@PERcisstudy", SqlDbType.SmallInt).Value = stg.PERcisstudy;
+                cmd.Parameters.Add("@PERnotstudy", SqlDbType.SmallInt).Value = stg.PERnotstudy;
+                cmd.Parameters.Add("@PERsalary", SqlDbType.Money).Value = stg.PERsalary;
+                cmd.Parameters.Add("@PERhide", SqlDbType.SmallInt).Value = stg.PERhide;
+                cmd.Parameters.Add("@PERlock", SqlDbType.SmallInt).Value = stg.PERlock;
+                cmd.Parameters.Add("@PERmemo", SqlDbType.NVarChar, 250).Value = Utility.DBString(stg.PERmemo);
+                cmd.Parameters.Add("@PEReditLK", SqlDbType.DateTime).Value = DBNull.Value;
+                cmd.Parameters.Add("@PERrefWE", SqlDbType.NVarChar, 512).Value = Utility.DBString(stg.PERrefWE);
+                cmd.Parameters.Add("@PEReditDT", SqlDbType.DateTime).Value = DateTime.Now;
+                cmd.ExecuteNonQuery();
 
-                DBHelper.Execute(strSQL, objConn);
+                //DBHelper.Execute(strSQL, objConn);
 
             }
             catch (Exception ex)

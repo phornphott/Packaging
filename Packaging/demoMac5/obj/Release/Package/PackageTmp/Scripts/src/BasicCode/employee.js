@@ -37,7 +37,8 @@
                 showBorders: true,
                 showRowLines: true,
                 rowAlternationEnabled: true,
-
+                columnAutoWidth: true,
+                allowColumnResizing: true,
                 paging: {
                     enabled: false
                 },
@@ -55,7 +56,7 @@
                     {
                         dataField: "PERid",
                         caption: "ลำดับ",
-                        width: 100,
+                        //width: 100,
                         alignment: 'center',
                         allowFiltering: false,
                         fixed: false,
@@ -104,6 +105,14 @@
                         format: 'dd/MM/yyyy',
                         alignment: 'center'
                     },
+                    //{
+                    //    dataField: "PERbdate",
+                    //    caption: "วันเกิด",
+                    //    width: 150,
+                    //    dataType: "date",
+                    //    //format: 'dd/MM/yyyy',
+                    //    alignment: 'center'
+                    //},
 
                     {
                         dataField: "PERworkS_Text",
@@ -147,34 +156,34 @@
                         caption: "ตำแหน่ง",
                         width: 150,
                     },
-                    {
-                        dataField: "PERstatus",
-                        caption: "สถานะ โสด/สมรส/ม่าย",
-                        width: 150,
+                    //{
+                    //    dataField: "PERstatus",
+                    //    caption: "สถานะ โสด/สมรส/ม่าย",
+                    //    width: 150,
 
-                    },
-                    {
-                        dataField: "PERnchild",
-                        caption: "จำนวนบุตร",
-                        width: 150,
-                    },
+                    //},
+                    //{
+                    //    dataField: "PERnchild",
+                    //    caption: "จำนวนบุตร",
+                    //    width: 150,
+                    //},
 
-                    {
-                        dataField: "PERcisstudy",
-                        caption: "จำนวนบุตรที่เรียน",
-                        width: 150,
-                    },
-                    {
-                        dataField: "PERnotstudy",
-                        caption: "จำนวนบุตรที่ไม่เรียน",
-                        width: 150,
-                    },
+                    //{
+                    //    dataField: "PERcisstudy",
+                    //    caption: "จำนวนบุตรที่เรียน",
+                    //    width: 150,
+                    //},
+                    //{
+                    //    dataField: "PERnotstudy",
+                    //    caption: "จำนวนบุตรที่ไม่เรียน",
+                    //    width: 150,
+                    //},
 
-                    {
-                        dataField: "PERsalary",
-                        caption: "เงินเดือน",
-                        width: 150,
-                    },
+                    //{
+                    //    dataField: "PERsalary",
+                    //    caption: "เงินเดือน",
+                    //    width: 150,
+                    //},
 
 
                     {
@@ -224,29 +233,29 @@
                         width: 150,
 
                     },
-                    {
-                        dataField: "PEReditLK_Text",
-                        caption: "ล็อกการบันทึกชั่วคราว",
-                        width: 150,
-                        dataType: "date",
-                        format: 'dd/MM/yyyy',
-                        alignment: 'center'
-                    },
-                    {
-                        dataField: "PERrefWE",
-                        caption: "อ้างอิง",
-                        width: 150,
+                    //{
+                    //    dataField: "PEReditLK_Text",
+                    //    caption: "ล็อกการบันทึกชั่วคราว",
+                    //    width: 150,
+                    //    dataType: "date",
+                    //    format: 'dd/MM/yyyy',
+                    //    alignment: 'center'
+                    //},
+                    //{
+                    //    dataField: "PERrefWE",
+                    //    caption: "อ้างอิง",
+                    //    width: 150,
 
-                    },
-                    {
-                        dataField: "PEReditDT_Text",
-                        caption: "วันเวลาที่บันทึก",
-                        width: 150,
-                        dataType: "date",
-                        format: 'dd/MM/yyyy',
-                        alignment: 'center'
+                    //},
+                    //{
+                    //    dataField: "PEReditDT_Text",
+                    //    caption: "วันเวลาที่บันทึก",
+                    //    width: 150,
+                    //    dataType: "date",
+                    //    format: 'dd/MM/yyyy',
+                    //    alignment: 'center'
 
-                    },
+                    //},
                     {
 
 
@@ -377,7 +386,9 @@
                             text: "รหัสพนักงาน",
                         },
                         editorOptions: {
-                            disabled: false
+                            disabled: false,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 15,
                         },
                         validationRules: [{
                             type: "required",
@@ -392,10 +403,10 @@
                         editorOptions: {
                             disabled: false
                         },
-                        validationRules: [{
-                            type: "required",
-                            message: "โปรดระบุ รหัสแผนก"
-                        }]
+                        //validationRules: [{
+                        //    type: "required",
+                        //    message: "โปรดระบุ รหัสแผนก"
+                        //}]
                     },
                     {
                         dataField: "PERtaxnos",
@@ -426,7 +437,7 @@
                         }
                     },
                     {
-                        dataField: "PERbdate",
+                        dataField: "PERbdate_Text",
                         label: {
                             text: "วันเกิด",
                         },
@@ -434,11 +445,15 @@
                         editorOptions: {
                             disabled: false,
                             displayFormat: "dd/MM/yyyy"
-                        }
+                        },
+                        validationRules: [{
+                            type: "required",
+                            message: "โปรดระบุ วันเกิด"
+                        }]
                     },
 
                     {
-                        dataField: "PERworkS",
+                        dataField: "PERworkS_Text",
                         label: {
                             text: "วันที่เริ่มทำงาน",
                         },
@@ -446,10 +461,14 @@
                         editorOptions: {
                             disabled: false,
                             displayFormat: "dd/MM/yyyy"
-                        }
+                        },
+                        validationRules: [{
+                            type: "required",
+                            message: "โปรดระบุ วันที่เริ่มทำงาน"
+                        }]
                     },
                     {
-                        dataField: "PERworkF",
+                        dataField: "PERworkF_Text",
                         label: {
                             text: "วันที่เลิกการทำงาน",
                         },
@@ -459,7 +478,6 @@
                             displayFormat: "dd/MM/yyyy"
                         }
                     },
-
                     {
                         dataField: "PERadd1",
 
@@ -660,9 +678,10 @@
                             text: "รหัสพนักงาน",
                         },
                         editorOptions: {
-                            disabled: false
-                        }
-                        ,
+                            disabled: false,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 15,
+                        },
                         validationRules: [{
                             type: "required",
                             message: "โปรดระบุ รหัสพนักงาน"
@@ -674,7 +693,9 @@
                             text: "รหัสแผนก",
                         },
                         editorOptions: {
-                            disabled: false
+                            disabled: false,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 15,
                         }
                     },
                     {
@@ -719,8 +740,11 @@
                         editorOptions: {
                             disabled: false,
                             displayFormat: "dd/MM/yyyy"
-
-                        }
+                        },                        
+                        validationRules: [{
+                            type: "required",
+                            message: "โปรดระบุ วันเกิด"
+                        }]
                     },
 
                     {
@@ -731,8 +755,12 @@
                         editorType: "dxDateBox",
                         editorOptions: {
                             disabled: false,
-                            displayFormat: "dd/MM/yyyy"
-                        }
+                            displayFormat: "dd/MM/yyyy",
+                        },
+                        validationRules: [{
+                            type: "required",
+                            message: "โปรดระบุ วันที่เริ่มทำงาน"
+                        }]
                     },
                     {
                         dataField: "PERworkF_Text",
@@ -926,17 +954,39 @@
 
             if ($("#form-container").dxForm("instance").validate().isValid) {
                 var obj = $("#form-container").dxForm("instance").option('formData');
+                
+                obj.PERbdate_Input = convertDate(obj.PERbdate_Text);
+                obj.PERworkS_Input = convertDate(obj.PERworkS_Text);
+                if (obj.PERworkF_Text == "undefined")
+                {
+                    obj.PERworkF_Input = new Date("1/1/0001 12:00:00");
+                }
+                else
+                {
+                    obj.PERworkF_Input = convertDate(obj.PERworkF_Text);
+                }
+                
                 $.post("../BasicCode/InsertPER",
                     {
-
                         PERcode: obj.PERcode,
                         PERdep: obj.PERdep,
                         PERtaxnos: obj.PERtaxnos,
                         PERnameT: obj.PERnameT,
                         PERnameE: obj.PERnameE,
-                        PERbdate_Input: convertDate(obj.PERbdate_Text),
-                        PERworkS_Input: convertDate(obj.PERworkS_Text),
-                        PERworkF_Input: convertDate(obj.PERworkF_Text),
+                        //PERbdate_Input: convertDate(obj.PERbdate_Text),
+                        //PERworkS_Input: convertDate(obj.PERworkS_Text),
+                        //PERworkF_Input: convertDate(obj.PERworkF_Text),
+                        PERbdate_Input: obj.PERbdate_Input,
+                        PERworkS_Input: obj.PERworkS_Input,
+                        PERworkF_Input: obj.PERworkF_Input,
+                        //PERbdate_Input: obj.PERbdate_Text,
+                        //PERworkS_Input: obj.PERworkS_Text,
+                        PERbdate_Text: obj.PERbdate_Text,
+                        PERworkS_Text: obj.PERworkS_Text,
+                        PERworkF_Text: obj.PERworkF_Text,
+                        PERbdate: obj.PERbdate,
+                        PERworkS: obj.PERworkS,
+                        PERworkF: obj.PERworkF,
                         PERadd1: obj.PERadd1,
                         PERadd2: obj.PERadd2,
                         PERadd3: obj.PERadd3,
@@ -952,9 +1002,7 @@
                         PERmemo: obj.PERmemo,
                         //     PEReditLK_Input: convertDate(obj.PEReditLK_Text),
                         PERrefWE: obj.PERrefWE,
-                        PEReditDT_Input: convertDate(obj.PEReditDT_Text),
-
-
+                        //PEReditDT_Input: convertDate(obj.PEReditDT_Text),
                     }
                 )
                     .done(function (data) {
@@ -981,6 +1029,14 @@
 
 
             var obj = $("#form-container").dxForm("instance").option('formData');
+            obj.PERbdate_Input = convertDate(obj.PERbdate_Text);
+            obj.PERworkS_Input = convertDate(obj.PERworkS_Text);
+            if (obj.PERworkF_Text == "undefined") {
+                obj.PERworkF_Input = new Date("1/1/0001 12:00:00");
+            }
+            else {
+                obj.PERworkF_Input = convertDate(obj.PERworkF_Text);
+            }
             $.post("../BasicCode/UpdatePER",
                 {
 
@@ -990,9 +1046,15 @@
                     PERtaxnos: obj.PERtaxnos,
                     PERnameT: obj.PERnameT,
                     PERnameE: obj.PERnameE,
-                    PERbdate_Input: convertDate(obj.PERbdate_Text),
-                    PERworkS_Input: convertDate(obj.PERworkS_Text),
-                    PERworkF_Input: convertDate(obj.PERworkF_Text),
+                    //PERbdate_Input: convertDate(obj.PERbdate_Text),
+                    //PERworkS_Input: convertDate(obj.PERworkS_Text),
+                    //PERworkF_Input: convertDate(obj.PERworkF_Text),
+                    PERbdate_Input: obj.PERbdate_Input,
+                    PERworkS_Input: obj.PERworkS_Input,
+                    PERworkF_Input: obj.PERworkF_Input,
+                    //PERbdate: obj.PERbdate,
+                    //PERworkS: obj.PERworkS,
+                    //PERworkF: obj.PERworkF,
                     PERadd1: obj.PERadd1,
                     PERadd2: obj.PERadd2,
                     PERadd3: obj.PERadd3,

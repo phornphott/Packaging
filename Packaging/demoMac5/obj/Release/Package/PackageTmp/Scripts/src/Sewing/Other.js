@@ -107,43 +107,50 @@ function LoadGrid2(data) {
             showEditorAlways: false,
 
         },
-            {
-                dataField: "Sewing_Id",
-                caption: "ค่าจ้างเย็บด้ายและค่าสวมถุงในส่วนหัว",
-                lookup: {
-                    dataSource: listSewing.data,
-                    valueExpr: 'Sewing_Id',
-                    displayExpr: 'Sewing_Name',
-                },
-                allowEditing: true,
-                showEditorAlways: false,
-                alidationRules: [{ type: "required" }],
+        {
+            dataField: "Sewing_Id",
+            caption: "ค่าจ้างเย็บด้ายและค่าสวมถุงในส่วนหัว",
+            lookup: {
+                dataSource: listSewing.data,
+                valueExpr: 'Sewing_Id',
+                displayExpr: 'Sewing_Name',
             },
-
-            {
-                dataField: "Sew_Id",
-                caption: "รหัสงานอื่น ๆ",
-                lookup: {
-                    dataSource: listSew.data,
-                    valueExpr: 'Sew_Id',
-                    displayExpr: 'Sew_Code',
-                },
-                allowEditing: true,
-                showEditorAlways: false,
-                alidationRules: [{ type: "required" }],
+            allowEditing: true,
+            showEditorAlways: false,
+            alidationRules: [{ type: "required" }],
+        },
+        {
+            dataField: "Sew_Id",
+            caption: "รหัสงานอื่น ๆ",
+            lookup: {
+                dataSource: listSew.data,
+                valueExpr: 'Sew_Id',
+                displayExpr: 'Sew_Code',
             },
-            {
-                dataField: "Sewing_O_Code",
-                caption: "รหัสงานอื่น ๆ",
-                allowEditing: true,
-                showEditorAlways: false,
-                visible: false,
-                //validationRules: [{ type: "required" }],
-            },
-
+            allowEditing: true,
+            showEditorAlways: false,
+            alidationRules: [{ type: "required" }],
+        },
+        {
+            dataField: "Sewing_O_Code",
+            caption: "รหัสงานอื่น ๆ",
+            allowEditing: true,
+            showEditorAlways: false,
+            visible: false,
+            //validationRules: [{ type: "required" }],
+        },
         {
             dataField: "Sewing_O_Desc",
             caption: "รายละเอียดงานอื่น ๆ",
+            allowEditing: true,
+            showEditorAlways: false,
+            //validationRules: [{ type: "required" }],
+        },
+        {
+            dataField: "Sewing_O_Uname",
+            caption: "หน่วยนับ",
+            width: 100,
+            alignment: 'center',
             allowEditing: true,
             showEditorAlways: false,
             validationRules: [{ type: "required" }],
@@ -151,21 +158,12 @@ function LoadGrid2(data) {
         {
             dataField: "Sewing_O_Uprice",
             caption: "ต้นทุนต่อหน่วย",
-            width: 200,
+            width: 100,
             allowEditing: true,
             showEditorAlways: false,
             validationRules: [{ type: "required" }],
-        },
+        },        
         {
-            dataField: "Sewing_O_Uname",
-            caption: "หน่วยนับ",
-             width: 200,
-            alignment: 'center',
-            allowEditing: true,
-            showEditorAlways: false,
-            validationRules: [{ type: "required" }],
-        },
-         {
             dataField: "Sewing_O_Memo",
             caption: "หมายเหตุ",
             width: 200,
@@ -217,7 +215,7 @@ function LoadGrid2(data) {
                             if (value.Sew_Id === e.row.data.Sew_Id) {
                                 component.cellValue(rowIndex, "Sewing_O_Code", value.Sew_Code);
                                 component.cellValue(rowIndex, "Sewing_O_Desc", value.Sew_NameT);
-                                component.cellValue(rowIndex, "Sewing_O_Uprice", value.Sew_UnamePrice);
+                                component.cellValue(rowIndex, "Sewing_O_Uname", value.Sew_UnamePrice);
                             }
                         })
                     }

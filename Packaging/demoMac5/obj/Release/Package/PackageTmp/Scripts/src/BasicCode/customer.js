@@ -1,34 +1,37 @@
 ﻿angular.module('AceApp').controller('CustomerController', ['$scope', '$rootScope', '$stateParams', '$http',
     function ($scope, $rootScope, $stateParams, $http) {
-        $scope.CallData = function() {
-            $("#btnAdd").show();
-            $("#btnAll").show();
-            $("#btnSubmitAdd").hide();
-            $("#btnSubmitEdit").hide();
-            $("#btnCancel").hide();
-            $("#grid-container").show();
-            $("#form-container").hide();
-            var url = "../BasicCode/GetDEB/0"
-            $.get(url)
-                .done(function (data) {
 
-                    if (data.success == true) {
+        $scope.CusGroup = "";
+
+        //$scope.CallData = function() {
+        //    $("#btnAdd").show();
+        //    $("#btnAll").show();
+        //    $("#btnSubmitAdd").hide();
+        //    $("#btnSubmitEdit").hide();
+        //    $("#btnCancel").hide();
+        //    $("#grid-container").show();
+        //    $("#form-container").hide();
+        //    var url = "../BasicCode/GetDEB/0"
+        //    $.get(url)
+        //        .done(function (data) {
+
+        //            if (data.success == true) {
 
 
-                        $scope.LoadGrid(data.data);
+        //                $scope.LoadGrid(data.data);
 
 
-                    } else {
-                        DevExpress.ui.notify(data.errMsg);
-                        $("#loadIndicator").dxLoadIndicator({
-                            visible: false
-                        });
+        //            } else {
+        //                DevExpress.ui.notify(data.errMsg);
+        //                $("#loadIndicator").dxLoadIndicator({
+        //                    visible: false
+        //                });
 
-                    }
+        //            }
 
-                });
+        //        });
 
-        }
+        //}
 
         $scope.CallAllData = function () {
             $("#btnAdd").show();
@@ -79,15 +82,15 @@
                 paging: {
                     enabled: false
                 },
-                //paging: {
-                //    pageSize: 100
-                //},
-                //pager: {
-                //    showPageSizeSelector: true,
-                //    allowedPageSizes: [100, 200, 500],
-                //    showInfo: true
-                //},
-                height: 500,
+                paging: {
+                    pageSize: 200
+                },
+                pager: {
+                    //showPageSizeSelector: true,
+                    //allowedPageSizes: [100, 200, 500],
+                    showInfo: true
+                },
+                height: 600,
                 searchPanel: {
                     visible: true,
                     width: 240,
@@ -105,6 +108,7 @@
                         alignment: 'center',
                         allowFiltering: false,
                         fixed: false,
+                        visible:false,
                         fixedPosition: 'left',
                         summaryType: "count",
                         cellTemplate: function (container, options) {
@@ -113,6 +117,15 @@
                                 .append(rownum)
                                 .appendTo(container);
                         }
+                    },
+                    {
+                        dataField: "DEBrow",
+                        caption: "ลำดับ",
+                        width: 100,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        fixed: false,
+                        fixedPosition: 'left',
                     },
                     {
                         dataField: "DEBcode",
@@ -230,12 +243,24 @@
 
                                     $.get(url)
                                         .done(function (data) {
-
+                                            
                                             if (data.success == true) {
                                                 //  LoadGrid(data.data);
                                                 data.data[0].DEBpaytype = "ไม่กำหนดเฉพาะวัน";
                                                 data.data[0].DEBbgrtype = "ไม่กำหนดเฉพาะวัน";
-                                                $scope.LoadEdit(data.data[0]);
+                                                var DEBdata = data.data[0];
+                                                var url = "api/Product/GetAllCustomerGroup"
+                                                $.get(url)
+                                                    .done(function (data) {
+                                                        if (data.StatusCode == 1) {
+                                                            $scope.CusGroup = data.Results;
+                                                            console.log($scope.CusGroup);
+                                                            $scope.LoadEdit(DEBdata);
+                                                            
+                                                        }
+
+                                                    });
+                                                
                                             } else {
                                                 DevExpress.ui.notify(data.data);
                                                 $("#loadIndicator").dxLoadIndicator({
@@ -258,36 +283,42 @@
                         fixedPosition: 'right',
                         width: 100,
                         cellTemplate: function (container, options) {
+                            //$("<div>")
+                            //    .append("<a onclick='Delete(" + options.data.STKid + ")' title='ลบข้อมูล' class='btn btn-icons btn-rounded btn-primary'  style='color:white' ><i class='fa fa-trash'></i></a>")
+                            //    .appendTo(container);
+
                             $("<div />").dxButton({
                                 icon: 'fa fa-trash',
                                 type: 'default',
                                 disabled: false,
                                 onClick: function (e) {
-                                    //var r = confirm("ต้องการลบกลุ่มสินค้านี้หรือไม่ !!!");
-                                    //if (r == true) {
-                                    //    $.post("../BasicCode/DeleteSTG",
-                                    //        {
-                                    //            STGid: options.data.STGid,
+                                    var r = confirm("ต้องการลบลูกค้านี้ใช่หรือไม่ !!!");
+                                    if (r == true) {
+                                        $.post("../BasicCode/DeleteDEB",
+                                            {
+                                                DEBid: options.data.DEBid,
 
-                                    //        }
-                                    //    )
-                                    //        .done(function (data) {
+                                            }
+                                        )
+                                            .done(function (data) {
 
-                                    //            if (data.success == true) {
-                                    //                DevExpress.ui.notify(data.data);
-                                    //                $("#loadIndicator").dxLoadIndicator({
-                                    //                    visible: false
-                                    //                });
-                                    //                $scope.CallData();
-                                    //            } else {
-                                    //                $("#loadIndicator").dxLoadIndicator({
-                                    //                    visible: false
-                                    //                });
-                                    //                DevExpress.ui.notify(data.errMsg);
-                                    //            }
+                                                if (data.success == true) {
+                                                    DevExpress.ui.notify(data.data);
+                                                    $("#loadIndicator").dxLoadIndicator({
+                                                        visible: false
+                                                    });
+                                                    //CallData();
+                                                    //$scope.CallData();
+                                                    $scope.CallAllData();
+                                                } else {
+                                                    $("#loadIndicator").dxLoadIndicator({
+                                                        visible: false
+                                                    });
+                                                    DevExpress.ui.notify(data.errMsg);
+                                                }
 
-                                    //        });
-                                    //}
+                                            });
+                                    }
                                 }
                             }).appendTo(container);
                         }
@@ -309,6 +340,8 @@
             $("#form-container").dxForm({
                 colCount: 2,
                 formData: data,
+                showColonAfterLabel: true,
+                showValidationSummary: true,
                 items: [
                     {
                         dataField: "DEBcode",
@@ -317,9 +350,10 @@
                         },
                         editorOptions: {
                             disabled: false,
-                            attr: { 'style': "text-transform: uppercase" },
-                            Maxleght: 15,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 15,
                         },
+                        isRequired: true,
                         validationRules: [{
                             type: "required",
                             message: "โปรดระบุ รหัสลูกหนี้"
@@ -332,9 +366,9 @@
                         },
                         editorType: "dxSelectBox",
                         editorOptions: {
-                            items: $scope.listDEG.data,
-                            valueExpr: 'DEGid',
-                            displayExpr: 'DEGdescT',
+                            items: $scope.CusGroup,
+                            valueExpr: 'DEGcode',
+                            displayExpr: 'DEGcode',
                             disabled: false,
                         }
                     }, {
@@ -345,6 +379,7 @@
                         editorOptions: {
                             disabled: false
                         },
+                        isRequired: true,
                         validationRules: [{
                             type: "required",
                             message: "โปรดระบุ รายละเอียดไทย"
@@ -487,15 +522,15 @@
                             disabled: false,
                         }
                     },
-                    {
-                        dataField: "DEBgoodsDef",
-                        label: {
-                            text: "จำนวนสินค้าที่ผูกกับลูกหนี้",
-                        },
-                        editorOptions: {
-                            disabled: false,
-                        }
-                    },
+                    //{
+                    //    dataField: "DEBgoodsDef",
+                    //    label: {
+                    //        text: "จำนวนสินค้าที่ผูกกับลูกหนี้",
+                    //    },
+                    //    editorOptions: {
+                    //        disabled: false,
+                    //    }
+                    //},
                     {
                         dataField: "DEBcreditTerm",
                         label: {
@@ -527,31 +562,31 @@
                         }
 
                     },
-                    {
-                        dataField: "DEBbgrday",
-                        label: {
-                            text: "วันรับวางบิล",
-                        },
-                        // editorType: "dxDateBox",
-                        editorOptions: {
-                            disabled: false,
-                            //   displayFormat: "dd/MM/yyyy"
-                        }
+                    //{
+                    //    dataField: "DEBbgrday",
+                    //    label: {
+                    //        text: "วันรับวางบิล",
+                    //    },
+                    //    // editorType: "dxDateBox",
+                    //    editorOptions: {
+                    //        disabled: false,
+                    //        //   displayFormat: "dd/MM/yyyy"
+                    //    }
 
 
-                    },
-                    {
-                        dataField: "DEBdate",
-                        label: {
-                            text: "วันที่ติดต่อครั้งแรก",
-                        },
-                        editorType: "dxDateBox",
-                        editorOptions: {
-                            disabled: false,
-                            displayFormat: "dd/MM/yyyy"
-                        }
+                    //},
+                    //{
+                    //    dataField: "DEBdate",
+                    //    label: {
+                    //        text: "วันที่ติดต่อครั้งแรก",
+                    //    },
+                    //    editorType: "dxDateBox",
+                    //    editorOptions: {
+                    //        disabled: false,
+                    //        displayFormat: "dd/MM/yyyy"
+                    //    }
 
-                    },
+                    //},
                     {
                         dataField: "DEBfax",
                         label: {
@@ -625,15 +660,15 @@
                             disabled: false
                         }
                     },
-                    {
-                        label: {
-                            text: "จำนวนวันที่วางบิลหลังส่งสินค้า",
-                        },
-                        editorOptions: {
-                            width: 120,
-                            disabled: false
-                        }
-                    },
+                    //{
+                    //    label: {
+                    //        text: "จำนวนวันที่วางบิลหลังส่งสินค้า",
+                    //    },
+                    //    editorOptions: {
+                    //        width: 120,
+                    //        disabled: false
+                    //    }
+                    //},
                     {
                         dataField: "DEBsalesP",
                         label: {
@@ -673,75 +708,89 @@
         
         $scope.Add = function() {
             var data = {};
-            $("#btnAdd").hide();
-            $("#btnAll").hide();
-            $("#btnSubmitAdd").show();
-            $("#btnSubmitEdit").hide();
-            $("#btnCancel").show();
-            $("#grid-container").hide();
-            $("#form-container").show();
-            $scope.LoadEdit({
-                DEBpaytype: "ไม่กำหนดเฉพาะวัน",
-                DEBbgrtype: "ไม่กำหนดเฉพาะวัน"
-            });
+            var url = "api/Product/GetAllCustomerGroup"
+            $.get(url)
+                .done(function (data) {
+                    if (data.StatusCode == 1) {
+                        $scope.CusGroup = data.Results;
+                        console.log($scope.CusGroup);
+                        $("#btnAdd").hide();
+                        $("#btnAll").hide();
+                        $("#btnSubmitAdd").show();
+                        $("#btnSubmitEdit").hide();
+                        $("#btnCancel").show();
+                        $("#grid-container").hide();
+                        $("#form-container").show();
+                        $scope.LoadEdit({
+                            DEBpaytype: "ไม่กำหนดเฉพาะวัน",
+                            DEBbgrtype: "ไม่กำหนดเฉพาะวัน"
+                        });
+                    } 
+
+                });
+
+            
 
 
         }
 
-        $scope.SubmitAdd = function() {
-            var obj = $("#form-container").dxForm("instance").option('formData');
-            obj.DEBbgrday_Input = convertDate(obj.DEBbgrday);
-            obj.DEBdate_Input = convertDate(obj.DEBdate);
+        $scope.SubmitAdd = function () {
+            if ($("#form-container").dxForm("instance").validate().isValid) {
+                var obj = $("#form-container").dxForm("instance").option('formData');
+                //obj.DEBbgrday_Input = convertDate(obj.DEBbgrday);
+                //obj.DEBdate_Input = convertDate(obj.DEBdate);
 
 
 
-            $.post("../BasicCode/InsertDEB",
-                obj
-            )
-                .done(function (data) {
+                $.post("../BasicCode/InsertDEB",
+                    obj
+                )
+                    .done(function (data) {
 
-                    if (data.success == true) {
-                        DevExpress.ui.notify(data.data);
-                        $("#loadIndicator").dxLoadIndicator({
-                            visible: false
-                        });
-                        $scope.CallData();
-                    } else {
-                        $("#loadIndicator").dxLoadIndicator({
-                            visible: false
-                        });
-                        DevExpress.ui.notify(data.data);
-                    }
+                        if (data.success == true) {
+                            DevExpress.ui.notify(data.data);
+                            $("#loadIndicator").dxLoadIndicator({
+                                visible: false
+                            });
+                            $scope.CallAllData();
+                        } else {
+                            $("#loadIndicator").dxLoadIndicator({
+                                visible: false
+                            });
+                            DevExpress.ui.notify(data.data);
+                        }
 
-                });
-
+                    });
+            }
 
         }
 
-        $scope.SubmitUpdate = function() {
-            var obj = $("#form-container").dxForm("instance").option('formData');
-            obj.DEBbgrday_Input = convertDate(obj.DEBbgrday);
-            obj.DEBdate_Input = convertDate(obj.DEBdate);
+        $scope.SubmitUpdate = function () {
+            if ($("#form-container").dxForm("instance").validate().isValid) {
+                var obj = $("#form-container").dxForm("instance").option('formData');
+                obj.DEBbgrday_Input = convertDate(obj.DEBbgrday);
+                obj.DEBdate_Input = convertDate(obj.DEBdate);
 
-            $.post("../BasicCode/UpdateDEB",
-                obj
-            )
-                .done(function (data) {
+                $.post("../BasicCode/UpdateDEB",
+                    obj
+                )
+                    .done(function (data) {
 
-                    if (data.success == true) {
-                        DevExpress.ui.notify(data.data);
-                        $("#loadIndicator").dxLoadIndicator({
-                            visible: false
-                        });
-                        $scope.CallData();
-                    } else {
-                        $("#loadIndicator").dxLoadIndicator({
-                            visible: false
-                        });
-                        DevExpress.ui.notify(data.data);
-                    }
+                        if (data.success == true) {
+                            DevExpress.ui.notify(data.data);
+                            $("#loadIndicator").dxLoadIndicator({
+                                visible: false
+                            });
+                            $scope.CallAllData();
+                        } else {
+                            $("#loadIndicator").dxLoadIndicator({
+                                visible: false
+                            });
+                            DevExpress.ui.notify(data.data);
+                        }
 
-                });
+                    });
+            }
         }
     }
 ]);

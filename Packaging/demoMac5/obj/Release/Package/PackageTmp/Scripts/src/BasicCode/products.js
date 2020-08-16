@@ -14,27 +14,27 @@
             return json;
         })();
 
-        $scope.CallData = function() {
-            $("#btnAdd").show();
-            $("#btnAll").show();
-            $("#btnSubmitAdd").hide();
-            $("#btnSubmitEdit").hide();
-            $("#btnCancel").hide();
-            $("#grid-container").show();
-            $("#form-container").hide();
-            var url = "../BasicCode/GetSTK/0"
-            $.get(url)
-                .done(function (data) {
-                    if (data.success == true) {
-                        $scope.LoadGrid(data.data);
-                    } else {
-                        DevExpress.ui.notify(data.errMsg);
-                        $("#loadIndicator").dxLoadIndicator({
-                            visible: false
-                        });
-                    }
-                });
-        }
+        //$scope.CallData = function() {
+        //    $("#btnAdd").show();
+        //    $("#btnAll").show();
+        //    $("#btnSubmitAdd").hide();
+        //    $("#btnSubmitEdit").hide();
+        //    $("#btnCancel").hide();
+        //    $("#grid-container").show();
+        //    $("#form-container").hide();
+        //    var url = "../BasicCode/GetSTK/0"
+        //    $.get(url)
+        //        .done(function (data) {
+        //            if (data.success == true) {
+        //                $scope.LoadGrid(data.data);
+        //            } else {
+        //                DevExpress.ui.notify(data.errMsg);
+        //                $("#loadIndicator").dxLoadIndicator({
+        //                    visible: false
+        //                });
+        //            }
+        //        });
+        //}
 
         $scope.CallAllData = function() {
             $("#btnAdd").show();
@@ -94,8 +94,8 @@
                         },
                         editorOptions: {
                             disabled: false,
-                            attr: { 'style': "text-transform: uppercase" },
-                            Maxleght: 25,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 25,
                         },
                         isRequired: true,
                         validationRules: [{
@@ -108,6 +108,11 @@
                         dataField: "STKgroup",
                         label: {
                             text: "กลุ่มสินค้า",
+                        },
+                        editorOptions: {
+                            disabled: false,
+                            inputAttr: { 'style': "text-transform: uppercase" },
+                            maxLength: 10,
                         },
                         //placeholder: "โปรดเลือกกลุ่มสินค้า",
                         //editorType: "dxSelectBox",
@@ -237,34 +242,34 @@
                         //}],
                     },
 
-                    {
-                        dataField: "STKunit1",
-                        label: {
-                            text: "หน่วยนับหลัก",
-                        },
-                        editorOptions: {
-                            disabled: false
-                        },
-                        isRequired: true,
-                        validationRules: [{
-                            type: "required",
-                            message: "โปรดระบุหน่วยนับหลัก"
-                        }],
-                    },
-                    {
-                        dataField: "STKunit2",
-                        label: {
-                            text: "หน่วยนับรอง",
-                        },
-                        editorOptions: {
-                            disabled: false
-                        },
-                        //isRequired: true,
-                        //validationRules: [{
-                        //    type: "required",
-                        //    message: "โปรดระบุหน่วยนับรอง"
-                        //}],
-                    },
+                    //{
+                    //    dataField: "STKunit1",
+                    //    label: {
+                    //        text: "หน่วยนับหลัก",
+                    //    },
+                    //    editorOptions: {
+                    //        disabled: false
+                    //    },
+                    //    //isRequired: true,
+                    //    //validationRules: [{
+                    //    //    type: "required",
+                    //    //    message: "โปรดระบุหน่วยนับหลัก"
+                    //    //}],
+                    //},
+                    //{
+                    //    dataField: "STKunit2",
+                    //    label: {
+                    //        text: "หน่วยนับรอง",
+                    //    },
+                    //    editorOptions: {
+                    //        disabled: false
+                    //    },
+                    //    //isRequired: true,
+                    //    //validationRules: [{
+                    //    //    type: "required",
+                    //    //    message: "โปรดระบุหน่วยนับรอง"
+                    //    //}],
+                    //},
 
 
 
@@ -411,18 +416,18 @@
 
                         },
                     },
-                    {
-                        dataField: "STKstatus",
-                        editorType: "dxCheckBox",
-                        label: {
-                            text: "สถานะ",
-                        },
-                        editorOptions: {
-                            disabled: false,
-                            value: false,
-                            text: "ใช่งาน"
-                        },
-                    },
+                    //{
+                    //    dataField: "STKstatus",
+                    //    editorType: "dxCheckBox",
+                    //    label: {
+                    //        text: "สถานะ",
+                    //    },
+                    //    editorOptions: {
+                    //        disabled: false,
+                    //        value: false,
+                    //        text: "ใช่งาน"
+                    //    },
+                    //},
                     {
                         dataField: "STKbarC2",
                         label: {
@@ -501,6 +506,17 @@
                     visible: true,
                     applyFilter: "auto"
                 },
+                paging: {
+                    enabled: false
+                },
+                paging: {
+                    pageSize: 200
+                },
+                pager: {
+                    //showPageSizeSelector: true,
+                    //allowedPageSizes: [5, 10, 20],
+                    showInfo: true
+                },
 
                 columns: [
                     {
@@ -510,6 +526,7 @@
                         alignment: 'center',
                         allowFiltering: false,
                         fixed: false,
+                        visible: false,
                         fixedPosition: 'left',
                         cellTemplate: function (container, options) {
                             rownum = rownum + 1;
@@ -517,6 +534,15 @@
                                 .append(rownum)
                                 .appendTo(container);
                         }
+                    },
+                    {
+                        dataField: "STKrow",
+                        caption: "ลำดับ",
+                        width: 100,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        fixed: false,
+                        fixedPosition: 'left',
                     },
                     {
                         dataField: "STKcode",
@@ -597,6 +623,7 @@
                     {
                         dataField: "STKlock",
                         caption: "ล็อกรหัสนี้",
+                        alignment: 'center',
                         width: 80,
                         cellTemplate: function (container, options) {
                             if (options.data.STKlock == -1) {
@@ -696,7 +723,8 @@
                                                         visible: false
                                                     });
                                                     //CallData();
-                                                    $scope.CallData();
+                                                    //$scope.CallData();
+                                                    $scope.CallAllData();
                                                 } else {
                                                     $("#loadIndicator").dxLoadIndicator({
                                                         visible: false
@@ -725,6 +753,8 @@
                 obj.STKhide = obj.STKhide == true ? -1 : 0;
                 obj.STKuse2 = obj.STKuse2 == true ? -1 : 0;
                 obj.STKstatus = obj.STKstatus == true ? -1 : 0;
+                obj.STKunit1 = 1;
+                obj.STKunit2 = 1;
 
                 $.post("../BasicCode/InsertSTK", obj)
                     .done(function (data) {
@@ -734,7 +764,8 @@
                             $("#loadIndicator").dxLoadIndicator({
                                 visible: false
                             });
-                            $scope.CallData();
+                            //$scope.CallData();
+                            $scope.CallAllData();
                         } else {
                             $("#loadIndicator").dxLoadIndicator({
                                 visible: false
@@ -762,7 +793,8 @@
                             $("#loadIndicator").dxLoadIndicator({
                                 visible: false
                             });
-                            $scope.CallData();
+                            //$scope.CallData();
+                            $scope.CallAllData();
                         } else {
                             $("#loadIndicator").dxLoadIndicator({
                                 visible: false

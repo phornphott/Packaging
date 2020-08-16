@@ -325,13 +325,21 @@ namespace demoMac5.Controllers
 
             try
             {
+                string bdate = item.PERbdate_Text;
                 int iDay = Convert.ToDateTime(item.PERbdate_Input).Day;
                 int iMonth = Convert.ToDateTime(item.PERbdate_Input).Month;
                 int iYear = Convert.ToDateTime(item.PERbdate_Input).Year;
                 //  item.PEReditLK = DateTime.ParseExact(item.PEReditLK_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 item.PERbdate = DateTime.ParseExact(item.PERbdate_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 item.PERworkS = DateTime.ParseExact(item.PERworkS_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                //item.PERworkF = DateTime.ParseExact(item.PERworkF_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                if (Utility.IsDate(item.PERworkF_Input))
+                {
+                    item.PERworkF = DateTime.ParseExact(item.PERworkF_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    item.PERworkF = DateTime.MinValue;
+                }
 
                 ProductData data = new ProductData();
 
@@ -385,8 +393,15 @@ namespace demoMac5.Controllers
                 item.PERworkS = DateTime.ParseExact(item.PERworkS_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 item.PERworkF = DateTime.ParseExact(item.PERworkF_Input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-
                 ProductData stg = new ProductData();
+
+                bool iExist = Library.CheckExistCode("PER", item.PERid, item.PERcode);
+
+                if (iExist)
+                {
+                    throw new Exception("รหัสพนักงานซ้ำ" + Environment.NewLine + "มีรหัสนี้ในฐานข้อมูลแล้ว");
+                }
+
                 stg.UpdatePER(item);
 
                 return Json(new

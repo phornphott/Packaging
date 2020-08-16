@@ -1,24 +1,23 @@
 ﻿
-<div class="row" ng-init="CallData()">
+<div class="row" ng-init="CallAllData()">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card  ">
             <div class="card-body">
-
                 <h4 class="text-primary mb-2">สินค้า</h4>
 
                 <hr>
                 <div class="col-lg-12">
                     <button type="button" class="btn btn-primary" ng-click="Add()" id="btnAdd"><i class="fa fa-plus"></i> เพิ่มสินค้า</button>
-                    <button type="button" class="btn btn-success" ng-click="CallAllData()" id="btnAll"><i class="fa fa-list"></i> ทั้งหมด</button>
+                    <!--<button type="button" class="btn btn-success" ng-click="CallAllData()" id="btnAll"><i class="fa fa-list"></i> ทั้งหมด</button>-->
 
                     <div id="form-container"></div>
-                    <div id="grid-container"></div>
+                    <div id="grid-container" dx-data-grid="dataGridOptions"></div>
                     <br>
 
                     <div class="pull-right">
                         <button type="button" class="btn btn-success" ng-click="SubmitAdd()" id="btnSubmitAdd"><i class="fa fa-save"></i> เพิ่มข้อมูลสินค้า</button>
                         <button type="button" class="btn btn-success" ng-click="SubmitUpdate()" id="btnSubmitEdit"><i class="fa fa-save"></i> แก้ไขข้อมูลสินค้า</button>
-                        <button type="button" class="btn btn-danger" ng-click="CallData()" id="btnCancel"><i class="fa fa-refresh"></i> ย้อนกลับ</button>
+                        <button type="button" class="btn btn-danger" ng-click="CallAllData()" id="btnCancel"><i class="fa fa-refresh"></i> ยกเลิก</button>
                     </div>
 
                 </div>
@@ -26,3 +25,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    #grid-container {
+        height: 100%;
+    }
+</style>

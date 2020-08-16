@@ -63,7 +63,7 @@ function LoadGrid1(data) {
         showRowLines: true,
         showBorders: true,
         rowAlternationEnabled: true,
-        height: 200,
+        height: 300,
         searchPanel: {
             visible: true,
             width: 240,

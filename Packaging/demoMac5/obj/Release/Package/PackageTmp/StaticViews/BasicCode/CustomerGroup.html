@@ -3,12 +3,23 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card  ">
             <div class="card-body">
-
                 <h4 class="text-primary mb-2">กลุ่มลูกค้า</h4>
+                <hr />
+                <div id="showAdd">
+                    <div id="form-container"></div><br>
+                    <div class="col-lg-11 pull-right">
+                        <button type="button" class="btn btn-success" id="btnAddDEG" ng-click="InsertDEG()"><i class="fa fa-plus"></i> เพิ่มกลุ่มลูกค้า</button>
+                        <button type="button" class="btn btn-success" id="btnEditDEG" ng-click="SubmitEditProductGroup()"><i class="fa fa-plus"></i> แก้ไขกลุ่มลูกค้า</button>
+                        <button type="button" class="btn btn-danger" id="btnRefreshDEG" ng-click="Refresh()"><i class="fa fa-refresh"></i> ยกเลิก</button>
 
-                <hr>
-                <div class="col-lg-12">
+                    </div>
+                    <br>
+                    <hr>
+                </div>
+                <button type="button" class="btn btn-primary" id="btnAdd" ng-click="Add()"><i class="fa fa-plus"></i> เพิ่มกลุ่มลูกค้า</button>
 
+                <div id="grid-container"></div>
+                <!--<div class="col-lg-12">
                     <br />
                     <div id="showAdd">
                         <div id="form-container"></div><br>
@@ -24,7 +35,7 @@
                     <button type="button" class="btn btn-primary" id="btnAdd" ng-click="Add()"><i class="fa fa-plus"></i> เพิ่มกลุ่มลูกค้า</button>
 
                     <div id="grid-container"></div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

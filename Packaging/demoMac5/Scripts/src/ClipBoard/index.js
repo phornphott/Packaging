@@ -49,7 +49,7 @@
             window.location = "#/ClipBoard/Dashboard";
         }
 
-        $scope.Eidt = function (id) {
+        $scope.Edit = function (id) {
 
             var url = "../ClipBoard/GetClipBoard/" + id
             $.get(url)
@@ -88,7 +88,7 @@
         //});
 
         if ($("#TempId").val() > 0) {
-            $scope.Eidt($("#TempId").val())
+            $scope.Edit($("#TempId").val())
         }
         else {
             if ($("#TempId").val() <= 0) {
@@ -770,10 +770,24 @@
                 {
                     'col1': res.Bagin_Use == 1 ? '1' : '0',
                     'col2': 'สวม',
+                    'col3': 'ความกว้าง (นิ้ว)',
+                    'col4': res.Bagin_Width,
+                    'col5': '',
+                    'col6': '1'
+                },
+                {
+                    'col1': '',
+                    'col2': '',
+                    'col3': 'ความยาว (นิ้ว)',
+                    'col4': res.Bagin_Lenght,
+                    'col5': '',
+                },
+                {
+                    'col1': '',
+                    'col2': '',
                     'col3': 'ไมครอน/ใบ',
                     'col4': res.Bagin_Micron,
                     'col5': '',
-                    'col6': '1'
                 },
                 {
                     'col1': '',
@@ -1598,7 +1612,7 @@
                             }
                             else {
                                 $("<div />").dxTextBox({
-                                    value: null,
+                                    //value: null,
                                     onValueChanged: function (data) {
                                         
                                     }

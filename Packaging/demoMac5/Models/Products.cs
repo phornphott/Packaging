@@ -68,6 +68,7 @@ namespace demoMac5.Models
             {
                 return PERbdate == DateTime.MinValue ? null : PERbdate.ToString("yyyy-MM-dd");
             }
+            set { }
         }
         public DateTime PERworkS { get; set; }
         public string PERworkS_Input { get; set; }
@@ -77,6 +78,7 @@ namespace demoMac5.Models
             {
                 return PERworkS == DateTime.MinValue ? null : PERworkS.ToString("yyyy-MM-dd");
             }
+            set { }
         }
         public DateTime PERworkF { get; set; }
         public string PERworkF_Input { get; set; }
@@ -86,6 +88,7 @@ namespace demoMac5.Models
             {
                 return PERworkF == DateTime.MinValue ? null : PERworkF.ToString("yyyy-MM-dd");
             }
+            set { }
         }
         public DateTime PEReditLK { get; set; }
         public string PEReditLK_Input { get; set; }
