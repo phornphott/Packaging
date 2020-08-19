@@ -290,6 +290,7 @@
     <Content Include="Scripts\component\oclazyload\CHANGELOG.md" />
     <Content Include="Scripts\component\oclazyload\LICENSE.md" />
     <Content Include="Scripts\component\oclazyload\README.md" />
+    <None Include="Properties\PublishProfiles\InternalPublish.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\css\bootstrap-theme.css" />
     <Content Include="Scripts\css\bootstrap-theme.min.css" />
