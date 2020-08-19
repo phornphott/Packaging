@@ -1428,22 +1428,28 @@
                     enabled: false
                 },
                 scrolling: {
-                    columnRenderingMode: "standard",
-                    mode: "standard",
-                    preloadEnabled: false,
-                    rowRenderingMode: "standard",
+                    mode: "virtual",
                     scrollByContent: true,
                     scrollByThumb: false,
                     showScrollbar: "onScroll",
-                    useNative: null
-                },
+                }, 
+                //scrolling: {
+                //    columnRenderingMode: "standard",
+                //    mode: "standard",
+                //    preloadEnabled: false,
+                //    rowRenderingMode: "standard",
+                //    scrollByContent: true,
+                //    scrollByThumb: false,
+                //    showScrollbar: "onScroll",
+                //    useNative: null
+                //},
                 editing: {
                     mode: "cell",
                     allowUpdating: true
                 },
 
                 width: 100 + "%",
-                height: 600,
+                height: '600px',
                 searchPanel: {
                     visible: false,
                     width: 240,
@@ -1651,7 +1657,7 @@
                     allowUpdating: true
                 },
                 width: 100 + "%",
-                height: 600,
+                height: '600px',
                 searchPanel: {
                     visible: false,
                     width: 240,
