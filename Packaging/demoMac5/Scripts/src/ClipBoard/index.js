@@ -1425,24 +1425,19 @@
                 rowAlternationEnabled: false,
                 showColumnHeaders: false,
                 paging: {
-                    enabled: false
+                    enabled: true
                 },
+                
                 scrolling: {
-                    mode: "virtual",
+                    columnRenderingMode: "standard",
+                    mode: "standard",
+                    preloadEnabled: false,
+                    rowRenderingMode: "standard",
                     scrollByContent: true,
                     scrollByThumb: false,
                     showScrollbar: "onScroll",
-                }, 
-                //scrolling: {
-                //    columnRenderingMode: "standard",
-                //    mode: "standard",
-                //    preloadEnabled: false,
-                //    rowRenderingMode: "standard",
-                //    scrollByContent: true,
-                //    scrollByThumb: false,
-                //    showScrollbar: "onScroll",
-                //    useNative: null
-                //},
+                    useNative: null
+                },
                 editing: {
                     mode: "cell",
                     allowUpdating: true
@@ -1657,7 +1652,7 @@
                     allowUpdating: true
                 },
                 width: 100 + "%",
-                height: '600px',
+                height: '600',
                 searchPanel: {
                     visible: false,
                     width: 240,
